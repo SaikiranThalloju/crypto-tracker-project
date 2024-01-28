@@ -4,7 +4,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: var(--black);
+    background-color: var(--backgroundColor);
     color: var(--blue);
     position: fixed;
     z-index: 1000;

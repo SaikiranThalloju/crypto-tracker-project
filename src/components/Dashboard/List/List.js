@@ -75,9 +75,16 @@ const List = ({ coin,isWatchlistPage  }) => {
       </td>
       </Tooltip>
       <Tooltip title="Market Cap">
-      <td>
+      <td className="desktop-td-mkt">
         <p className="total-volume coin-price td-right-align">
           ${coin.market_cap.toLocaleString()}
+        </p>
+      </td>
+      </Tooltip>
+      <Tooltip title="Market Cap">
+      <td className="mobile-td-mkt">
+        <p className="total-volume coin-price td-right-align">
+          ${ConvertNumbers(coin.market_cap.toLocaleString())}
         </p>
       </td>
       </Tooltip>

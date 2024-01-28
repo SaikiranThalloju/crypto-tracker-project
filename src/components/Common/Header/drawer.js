@@ -10,7 +10,7 @@ export default function TemporaryDrawer() {
 const [open,setOpen] = useState(false);
 
   return (
-    <div>  
+    <div >  
           <IconButton  onClick={()=>setOpen(true)}><MenuRoundedIcon className='link'/></IconButton>
           <Drawer
             anchor={"right"}
@@ -28,7 +28,7 @@ const [open,setOpen] = useState(false);
                 <p className='link'>Watchlist</p>
             </Link >
             <Link to ='/dashboardPage'>
-                <p className='link'>Dasboard</p>
+                <p className='link'>Dashboard</p>
             </Link>
             </div>
           </Drawer>

@@ -12,9 +12,10 @@ import ComparePage from './pages/ComparePage';
 import 'react-toastify/dist/ReactToastify.css';
 import WatchlistPage from './pages/WatchList';
 // const ComparePage = lazy(()=>import("../src/pages/ComparePage"))
+// import Footer from './components/Common/Footer/Index';
 function App() {
   return (
-    <div  data-theme="dark" >
+    <div  >
    <ToastContainer/>
    <Router>
 <Routes>
@@ -25,6 +26,7 @@ function App() {
    <Route path='/watchlist' element={<WatchlistPage/>}/>
 </Routes>
 </Router>
+{/* <Footer/> */}
     </div>
   );
 }

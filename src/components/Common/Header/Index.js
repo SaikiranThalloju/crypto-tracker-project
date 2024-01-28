@@ -5,9 +5,11 @@ import Button from '../Button'
 import { Link } from 'react-router-dom'
 import CustomizedSwitches from '../ThemeButton'
 import { ThemeProvider } from '../../ThemeContext'
-
+import Footer from '../Footer/Index'
+ 
 const Index = () => {
   return (
+ 
     <ThemeProvider>
     <div className='navbar'>
         <h1 className='logo'>CryptoTracker<span style={{color : "var(--blue)"}}>.</span></h1>
@@ -31,9 +33,9 @@ const Index = () => {
         <div className='mobile-drawer'>
             <TemporaryDrawer/>
         </div>
-      
-    </div>
+        </div>
     </ThemeProvider>
+   
   )
 }
 

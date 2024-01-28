@@ -9,6 +9,7 @@ import { addToWatchlist } from "../../../functions/addToWatchList";
 import { hasBeenAdded } from "../../../functions/hasBeenAdded";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import Footer from "../../Common/Footer/Index";
 const GridComponent = ({ coin,isWatchlistPage }) => {
   //   return (
   //     <Link to = {`/coin/${coin.id}`}>
@@ -70,6 +71,7 @@ const GridComponent = ({ coin,isWatchlistPage }) => {
 
   const [added, setAdded] = useState(hasBeenAdded(coin.id));
   return (
+   
     <Link to={`/coin/${coin.id}`}>
       <div
         className={`grid-container ${
@@ -154,6 +156,8 @@ const GridComponent = ({ coin,isWatchlistPage }) => {
         </p>
       </div>
     </Link>
+    
+    
   );
 };
 

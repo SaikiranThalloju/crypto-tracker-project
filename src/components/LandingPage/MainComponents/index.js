@@ -6,8 +6,13 @@ import  gradient  from '../../../assets/gradient 1.png'
 import {motion} from "framer-motion"
 import { Link } from 'react-router-dom'
 import { RWebShare } from "react-web-share";
+import Footer from '../../Common/Footer/Index'
+import Index from '../../Common/Header/Index'
+
 function MainComponent() {
   return (
+    <div className='homepage'>
+    <Index/>
     <div className='flex-info'>
         <div className='left-component'>
             <motion.h1 className='crypto-tracker-heading'
@@ -31,8 +36,7 @@ function MainComponent() {
             initial = {{opacity : 0,x : 50}}
             animate = {{opacity : 1 , x :0}}
             transition={{duration:0.5,delay : 1.5}}>
-            {/* <Button text={"Dashboard"}/> */}
-            <Link to = '/dasboardPage'><Button text={"Dasboard"}/></Link>
+            <Link to = '/dashboardPage'><Button text={"Dashboard"}/></Link>
             <RWebShare
             data={{
               text: "Crypto Dashboard made using React JS.",
@@ -43,7 +47,6 @@ function MainComponent() {
           >
             <Button text="Share App" outlined={true} />
           </RWebShare>
-
         </motion.div>
         </div>
         <div className='phone-gradient'>
@@ -60,9 +63,10 @@ function MainComponent() {
           <img src= {gradient} className='gradient'/>
 
         </div>
-    
+        
     </div>
-       
+    <Footer/>
+    </div>
   )
 }
 

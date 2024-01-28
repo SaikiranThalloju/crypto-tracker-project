@@ -29,7 +29,7 @@ function WatchlistPage() {
       {loading || !coins ? (
         <Loader />
       ) : (
-        <div style={{ minHeight: "90vh" }}>
+        <div style={{ minHeight: "100vh" }}>
           {myWatchlist?.length === 0 || !coins ? (
             <div>
               <Index />

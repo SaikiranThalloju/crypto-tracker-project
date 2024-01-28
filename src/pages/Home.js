@@ -1,11 +1,13 @@
 import React from 'react'
-import Index from '../components/Common/Header/Index'
+// import Index from '../components/Common/Header/Index'
 import MainComponent from '../components/LandingPage/MainComponents'
+import Footer from '../components/Common/Footer/Index'
 function Home() {
   return (
     <div>
-      <Index/>
+      {/* <Index/> */}
       <MainComponent/>
+      {/* <Footer/> */}
     </div>
   )
 }

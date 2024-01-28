@@ -1,0 +1,10 @@
+.coin-info-heading,.coin-info-desc{
+    cursor: pointer;
+}
+
+.coin-info-desc a{
+    /* text-decoration: underline; */
+}
+.coin-info-desc a:hover{
+    color: var(--blue)!important;
+}

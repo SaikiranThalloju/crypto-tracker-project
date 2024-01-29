@@ -24,7 +24,7 @@ const [open,setOpen] = useState(false);
           <Link to ='/'>
                 <p className='link'>Home</p>
             </Link>
-            <Link to ='/compare'>
+            <Link to ='/comparePage'>
                 <p className='link'>Compare</p>
             </Link>
             <Link to ='/watchlist'>

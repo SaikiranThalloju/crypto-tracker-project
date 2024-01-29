@@ -5,6 +5,7 @@ import Loader from "../components/Common/Loader/Loader";
 import { get100Coins } from "../functions/get100Coins";
 import TabsComponent from '../components/Dashboard/Tabs/tabsComponent'
 
+
 function WatchlistPage() {
   const coins = JSON.parse(localStorage.getItem("watchlist"));
   const [myWatchlist, setMyWatchlist] = useState([]);
@@ -29,7 +30,7 @@ function WatchlistPage() {
       {loading || !coins ? (
         <Loader />
       ) : (
-        <div >
+        <div className="watchlist" >
           {myWatchlist?.length === 0 || !coins ? (
             <div>
               <Index />

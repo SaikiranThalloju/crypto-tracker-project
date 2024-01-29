@@ -17,14 +17,14 @@ img {
   -o-user-drag: none;
   }
 
- /* .grey-wrapper{
+ .grey-wrapper{
     display: block;
     width: 90%;
     background-color: var(--darkgrey);
     margin: 1rem 3rem;
     padding: 1.2rem;
     border-radius: 1rem;
-  } */
+  }
 
 .coins-days-flex{
     width: 50%;
@@ -33,3 +33,7 @@ img {
     align-items: center;
     margin: 1.5rem;
   } 
+
+  .watchlist{
+  min-height: 100vh;
+  }

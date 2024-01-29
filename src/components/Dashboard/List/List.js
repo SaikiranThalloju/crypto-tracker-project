@@ -17,25 +17,25 @@ const List = ({ coin,isWatchlistPage  }) => {
   return (
     <Link to = {`/coin/${coin.id}`}>
     <tr className="list-row"style={{ display: isWatchlistPage && !added && "none" }}>
-      <Tooltip title="Logo">
+      <Tooltip title="Logo" >
         <td className="td-image">
-          <img className="coin-logo" src={coin.image} />
+          <img className="coin-logo td-logo" src={coin.image} />
         </td>
       </Tooltip>
 
       <Tooltip title="Symbol">
         <td >
-          <div className="name-col">
-            <p className="coin-symbol">{coin.symbol}</p>
+          <div className="name-col td-name">
+            <p className="coin-symbol td-symbol">{coin.symbol}</p>
 
-            <p className="coin-name"> {coin.name}</p>
+            <p className="coin-name td-name"> {coin.name}</p>
           </div>
         </td>
       </Tooltip>
 
       {coin.price_change_percentage_24h  > 0 ?  (
-        <td className="chip-flex">
-          <div className="price-chip">
+        <td className="chip-flex td-chip-flex">
+          <div className="price-chip td-price-chip">
             +{coin.price_change_percentage_24h.toFixed(2)}%
           </div>
           <div className="icon-chip td-icon">
@@ -43,8 +43,8 @@ const List = ({ coin,isWatchlistPage  }) => {
           </div>
         </td>
       ) : (
-        <td className="chip-flex">
-          <div className="price-chip chip-flex-red">
+        <td className="chip-flex td-chip-flex">
+          <div className="price-chip chip-flex-red td-price-chip td-red">
             {coin.price_change_percentage_24h.toFixed(2)}%
           </div>
           <div className="icon-chip chip-flex-red td-icon" >
@@ -55,7 +55,7 @@ const List = ({ coin,isWatchlistPage  }) => {
       <Tooltip title="Current Price">
         <td>
           <h3
-            className="coin-price td-center-align"
+            className="coin-price td-center-align td-coinprice"
             style={{
               color:
                 coin.price_change_percentage_24h < 0
@@ -70,7 +70,7 @@ const List = ({ coin,isWatchlistPage  }) => {
       <Tooltip title="Total Volume ">
       <td>
         {/* {" "} */}
-        <p className="total-volume coin-price td-right-align td-volume">
+        <p className="total-volume coin-price td-right-align td-volume total_volume">
           ${coin.total_volume.toLocaleString()}
         </p>
       </td>
@@ -106,15 +106,15 @@ const List = ({ coin,isWatchlistPage  }) => {
           >
             {added ? (
               <StarRoundedIcon
-                className={`watchlist-icon ${
-                  coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
+                className={`watchlist-icon td-watchlist-icon ${
+                  coin.price_change_percentage_24h < 0 && "watchlist-icon-red td-watchlist-icon-red"
                 } `}
                 sx={{ fontSize: "2rem !important" }}
               />
             ) : (
               <StarBorderRoundedIcon
-                className={`watchlist-icon ${
-                  coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
+                className={`watchlist-icon td-watchlist-icon ${
+                  coin.price_change_percentage_24h < 0 && "watchlist-icon-red td-watchlist-icon-red"
                 } `}
                 sx={{ fontSize: "2rem !important" }}
               />

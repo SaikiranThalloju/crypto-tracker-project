@@ -5,6 +5,7 @@ import Drawer from '@mui/material/Drawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
+import ThemeButton from "../ThemeButton/index"
 export default function TemporaryDrawer() {
    
 const [open,setOpen] = useState(false);
@@ -17,7 +18,9 @@ const [open,setOpen] = useState(false);
             open={open}
             onClose={()=>setOpen(false)}
           >      
+          
           <div className='drawer-div'>
+          <ThemeButton/>
           <Link to ='/'>
                 <p className='link'>Home</p>
             </Link>

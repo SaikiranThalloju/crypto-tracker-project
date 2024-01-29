@@ -29,7 +29,7 @@ function WatchlistPage() {
       {loading || !coins ? (
         <Loader />
       ) : (
-        <div style={{ minHeight: "100vh" }}>
+        <div >
           {myWatchlist?.length === 0 || !coins ? (
             <div>
               <Index />
@@ -43,7 +43,7 @@ function WatchlistPage() {
               </div>
             </div>
           ) : (
-            <div style={{ height: "95vh" }}>
+            <div>
               <Index />
               <TabsComponent coins={myWatchlist} isWatchlistPage={true} />
             </div>

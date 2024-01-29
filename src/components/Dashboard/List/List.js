@@ -1,10 +1,11 @@
 import React,{useState} from "react";
 import "./style.css";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
+import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUp";
+import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDown";
 import { IconButton, Tooltip } from "@mui/material";
 import { ConvertNumbers } from "../../../functions/ConvertNumbers";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { removeFromWatchlist } from "../../../functions/removeFromWatchList";
 import { addToWatchlist } from "../../../functions/addToWatchList";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
@@ -23,7 +24,7 @@ const List = ({ coin,isWatchlistPage  }) => {
       </Tooltip>
 
       <Tooltip title="Symbol">
-        <td>
+        <td >
           <div className="name-col">
             <p className="coin-symbol">{coin.symbol}</p>
 
@@ -37,8 +38,8 @@ const List = ({ coin,isWatchlistPage  }) => {
           <div className="price-chip">
             +{coin.price_change_percentage_24h.toFixed(2)}%
           </div>
-          <div className="icon-chip  td-icon">
-            <TrendingUpIcon />
+          <div className="icon-chip td-icon">
+            <TrendingUpRoundedIcon />
           </div>
         </td>
       ) : (
@@ -46,15 +47,15 @@ const List = ({ coin,isWatchlistPage  }) => {
           <div className="price-chip chip-flex-red">
             {coin.price_change_percentage_24h.toFixed(2)}%
           </div>
-          <div className="icon-chip chip-flex-red  td-icon" >
-            <TrendingDownIcon />
+          <div className="icon-chip chip-flex-red td-icon" >
+            <TrendingDownRoundedIcon />
           </div>
         </td>
       )}
       <Tooltip title="Current Price">
         <td>
           <h3
-            className="coin-price"
+            className="coin-price td-center-align"
             style={{
               color:
                 coin.price_change_percentage_24h < 0
@@ -68,7 +69,7 @@ const List = ({ coin,isWatchlistPage  }) => {
       </Tooltip>
       <Tooltip title="Total Volume ">
       <td>
-        {" "}
+        {/* {" "} */}
         <p className="total-volume coin-price td-right-align td-volume">
           ${coin.total_volume.toLocaleString()}
         </p>
@@ -84,7 +85,7 @@ const List = ({ coin,isWatchlistPage  }) => {
       <Tooltip title="Market Cap">
       <td className="mobile-td-mkt">
         <p className="total-volume coin-price td-right-align">
-          ${ConvertNumbers(coin.market_cap.toLocaleString())}
+          {ConvertNumbers(coin.market_cap.toLocaleString())}
         </p>
       </td>
       </Tooltip>
@@ -128,118 +129,6 @@ const List = ({ coin,isWatchlistPage  }) => {
 
 export default List;
 
-// const List = ({ coin,isWatchlistPage }) => {
-//   const [added, setAdded] = useState(hasBeenAdded(coin.id));
-//   return (
-//     <Link to={`/coin/${coin.id}`}>
-//     <tr className="list-row" style={{ display: isWatchlistPage && !added && "none" }}>
-//         <Tooltip title='Coin Logo' placement="bottom-start">
-//       <td className="td-image">
-//         <img src={coin.image} className="coin-logo" alt="" />
-//       </td>
-//       </Tooltip>
-//       <Tooltip title='Coin Info'placement="bottom-start">
-//       <td>
-//         <div className="name-col">
-//           <p className="coin-symbol">{coin.symbol}</p>
-//           <p className="coin-name">{coin.name}</p>
-//         </div>
-//       </td>
-//       </Tooltip>
-      
-//       {/* <Tooltip title='Price Change in 24hr'placement="bottom-start"> */}
-//       {coin.price_change_percentage_24h > 0 ? (
-//         <td className="chip-flex chip-flex-mobile">
-//           <div className="price-chip price-chip-desktop">
-//             {coin.price_change_percentage_24h.toFixed(2)} %
-//           </div>
-//           <div className="icon-chip td-icon">
-//             <TrendingUpIcon />
-//           </div>
-//         </td>
-//         // </Tooltip>
-//       ) : (
-//         <td className="chip-flex chip-flex-mobile">
-//           <div className="price-chip price-chip-desktop chip-red">
-//             {coin.price_change_percentage_24h.toFixed(2)} %
-//           </div>
-//           <div className="icon-chip chip-red td-icon">
-//             <TrendingDownIcon />
-//           </div>
-//         </td>
-//       )}
-//       {/* </Tooltip> */}
-//       <Tooltip title='Current Price'placement="bottom">
-//       <td>
-//         <h3
-//           className="coin-price td-center-align"
-//           style={{
-//             color:
-//               coin.price_change_percentage_24h > 0
-//                 ? "var(--green)"
-//                 : "var(--red)",
-//           }}
-//         >
-//           ${coin.current_price.toLocaleString()}
-//         </h3>
-//       </td>
-//       </Tooltip>
-//       <Tooltip title='Market Cap'placement="bottom">
-//       <td className="desktop-td-market">
-//       <p className="total_volume td-right-align">
-//           ${coin.market_cap.toLocaleString()}
-//         </p>
-//       </td>
-//       </Tooltip>
-//       <Tooltip title='Market Cap'placement="bottom">
-//       <td className="mobile-td-market">
-//       <p className="total_volume td-right-align">
-//           ${ConvertNumbers(coin.market_cap)}
-//         </p>
-//       </td>
-//       </Tooltip>
-//       <Tooltip title='Total Volume'placement="bottom">
-//       <td className="totalvol">
-//         <p className="total_volume td-right-align td-volume">
-//           ${coin.total_volume.toLocaleString()}
-//         </p>
-//       </td>
-//       </Tooltip>
-//       <td>
-//       <IconButton
-//             onClick={(e) => {
-//               e.preventDefault();
-//               if (added) {
-//                 console.log("Removing from watchlist:", coin.id);
-//                 removeFromWatchlist(coin.id);
-//                 setAdded(false);
-//               } else {
-//                 console.log("Adding to watchlist:", coin.id);
-//                 addToWatchlist(coin.id);
-//                 setAdded(true);
-//               }
-//             }}
-//           >
-//             {added ? (
-//               <StarRoundedIcon
-//                 className={`watchlist-icon ${
-//                   coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
-//                 } `}
-//                 sx={{ fontSize: "2rem !important" }}
-//               />
-//             ) : (
-//               <StarBorderRoundedIcon
-//                 className={`watchlist-icon ${
-//                   coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
-//                 } `}
-//                 sx={{ fontSize: "2rem !important" }}
-//               />
-//             )}
-//           </IconButton>
-//       </td>
-//     </tr>
-//     </Link>
-//   );
-// };
 
-// export default List;
+
+

@@ -12,6 +12,7 @@ import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/LineChart/LineChart";
 import PriceType from "../components/Coin/PriceType/pricetype";
 import Footer from "../components/Common/Footer/Index";
+import BackToTop from "../components/Common/BacktoTop/BackToTop"
 
 
 function ComparePage() {
@@ -134,6 +135,7 @@ function ComparePage() {
         </>
       )}
       ;
+      <BackToTop/>
       <Footer/>
     </div>
   );

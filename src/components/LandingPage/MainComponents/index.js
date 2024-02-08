@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./styles.css"
 import Button from '../../Common/Button'
 import  Phone  from '../../../assets/phone 1.png'
 import  gradient  from '../../../assets/gradient 1.png'
 import {motion} from "framer-motion"
 import { Link } from 'react-router-dom'
-import { RWebShare } from "react-web-share";
+import  {RWebShare}  from "react-web-share";
 import Footer from '../../Common/Footer/Index'
 import Index from '../../Common/Header/Index'
 
 function MainComponent() {
+
+    // const[flag ,setFlag] = useState(false);
+
+  // function copyTextToClipboard() {
+  //   let path = window.location.href;
+  //   navigator.clipboard.writeText(path).then(
+  //     () => {
+  //       alert('Text copied to clipboard');
+  //       // setFlag(true);
+  //     },
+  //     (err) => {
+  //       console.error('Error in copying text: ', err);
+  //     }
+  //   );
+  // }
+
+
   return (
     <div className='homepage'>
     <Index/>
@@ -37,18 +54,33 @@ function MainComponent() {
             animate = {{opacity : 1 , x :0}}
             transition={{duration:0.5,delay : 1.5}}>
             <Link to = '/dashboardPage'><Button text={"Dashboard"}/></Link>
+            <div>
             <RWebShare
             data={{
               text: "Crypto Dashboard made using React JS.",
-              url: "https://crypto-dashboard-dec.netlify.app/",
+              url: "https://crypto-tracker-project-tawny.vercel.app/",
               title: "CryptoDashboard.",
             }}
-            onClick={() => console.log("shared successfully!")}
+            onClick={()=>console.log("shared successfully")}
           >
             <Button text="Share App" outlined={true} />
           </RWebShare>
+
+             {/* <RWebShare 
+            data={{
+              text: "Crypto Dashboard made using React JS.",
+              url: "https://crypto-tracker-project-tawny.vercel.app/",
+              title: "CryptoDashboard.",
+            }}
+            onClick={()=>console.log("shared successfully")}
+          >
+            <Button text="Share App" outlined={true} />
+          </RWebShare> */}
+
+          </div>
         </motion.div>
         </div>
+
         <div className='phone-gradient'>
           <motion.img src= {Phone} className='iphone-img'
           initial = {{y:-10}}
@@ -61,9 +93,7 @@ function MainComponent() {
           }}
           />
           <img src= {gradient} className='gradient'/>
-
         </div>
-        
     </div>
     <Footer/>
     </div>

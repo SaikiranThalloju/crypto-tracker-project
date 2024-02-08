@@ -106,16 +106,19 @@ function ComparePage() {
       ) : (
         <>
           <div className="coins-days-flex">
+            
             <SelectCoins
               crypto1={crypto1}
               crypto2={crypto2}
               handleCoinChange={handleCoinChange} 
             />
+            <div>
             <SelectDays
               days={days}
               handleDaysChange={handleDaysChange}
               noPTag={true}
             />
+            </div>  
           </div>
           <div className="grey-wrapper">
             <List coin = {crypto1Data} />

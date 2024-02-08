@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    /* margin: 3rem; */
+    margin: 3rem;
     height: auto;
     border-radius: 0.75rem;
     background: linear-gradient(
@@ -12,7 +12,7 @@
       rgba(31, 83, 198, 1) 0%,
       rgba(0, 212, 255, 1) 100%
     );
-    background-size: 400% 400%;
+    /* background-size: 400% 400%; */
     animation: gradient 15s ease infinite;
   }
   

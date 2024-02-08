@@ -1,92 +1,42 @@
 import React, { useState } from "react";
 import "./styles.css";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
-import { Link } from "react-router-dom";
+import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUp";
+import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDown";
+// import { Link } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import { removeFromWatchlist } from "../../../functions/removeFromWatchList";
 import { addToWatchlist } from "../../../functions/addToWatchList";
 import { hasBeenAdded } from "../../../functions/hasBeenAdded";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
-import Footer from "../../Common/Footer/Index";
-const GridComponent = ({ coin,isWatchlistPage }) => {
-  //   return (
-  //     <Link to = {`/coin/${coin.id}`}>
-  //     <div
-  //       className={`grid-container ${
-  //         coin.price_change_percentage_24h < 0
-  //        && "grid-container-red" }`}
-  //     >
-  //       <div className="info-flex">
-  //         <img className="coin-logo" src={coin.image} />
-  //         <div className="name-col">
-  //           <p className="coin-symbol">{coin.symbol}</p>
-  //           <p className="coin-name"> {coin.name}</p>
-  //         </div>
-  //       </div>
-  //       {coin.price_change_percentage_24h > 0 ? (
-  //         <div className="chip-flex">
-  //           <div className="price-chip">
-  //             +{coin.price_change_percentage_24h.toFixed(2)}%
-  //           </div>
-  //           <div className="icon-chip">
-  //             <TrendingUpIcon />
-  //           </div>
-  //         </div>
-  //       ) : (
-  //         <div className="chip-flex  ">
-  //           <div className="price-chip chip-flex-red">
-  //             {coin.price_change_percentage_24h.toFixed(2)}%
-  //           </div>
-  //           <div className="icon-chip chip-flex-red">
-  //             <TrendingDownIcon />
-  //           </div>
-  //         </div>
-  //       )}
-  //       <div className="info-conatiner">
-  //         <h3
-  //           className="coin-price"
-  //           style={{
-  //             color:
-  //               coin.price_change_percentage_24h < 0
-  //                 ? " var(--red)"
-  //                 : "var(--green",
-  //           }}
-  //         >
-  //           ${coin.current_price.toLocaleString()}
-  //         </h3>
-  //         <p className="total-volume">
-  //           Total Volume : {coin.total_volume.toLocaleString()}
-  //         </p>
-  //         <p className="total-volume">
-  //           Market Cap : ${coin.market_cap.toLocaleString()}
-  //         </p>
-  //       </div>
-  //     </div>
-  //     </Link>
+// import Footer from "../../Common/Footer/Index";
 
-  //   )
-  // };
 
+
+function GridComponent({ coin, delay, isWatchlistPage }) {
   const [added, setAdded] = useState(hasBeenAdded(coin.id));
+
   return (
-   
-    <Link to={`/coin/${coin.id}`}>
+    <a href={`/coin/${coin.id}`}>
       <div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: delay }}
         className={`grid-container ${
           coin.price_change_percentage_24h < 0 && "grid-container-red"
         }`}
         style={{ display: isWatchlistPage && !added && "none" }}
       >
         <div className="info-flex">
-          <img src={coin.image} className="coin-logo" alt="" />
-          <div className="name-col">
-            <p className="coin-symbol">{coin.symbol}</p>
-            <p className="coin-name">{coin.name}</p>
+          <div className="coin-info-flex">
+            <img src={coin.image} className="coin-image" />
+            <div className="coin-name-flex">
+              <h3 className="coin-symbol">{coin.symbol}</h3>
+              <p className="coin-name">{coin.name}</p>
+            </div>
           </div>
+
           <IconButton
-            className="ico"
             onClick={(e) => {
               e.preventDefault();
               if (added) {
@@ -117,48 +67,44 @@ const GridComponent = ({ coin,isWatchlistPage }) => {
         </div>
 
         {coin.price_change_percentage_24h > 0 ? (
-          <div className="chip-flex">
+          <div className="coin-info-flex">
             <div className="price-chip">
               {coin.price_change_percentage_24h.toFixed(2)} %
             </div>
-            <div className="icon-chip">
-              <TrendingUpIcon />
-            </div>
+            <TrendingUpRoundedIcon className="trending-icon" />
           </div>
         ) : (
-          <div className="chip-flex">
-            <div className="price-chip chip-red">
+          <div className="coin-info-flex">
+            <div className="price-chip red">
               {coin.price_change_percentage_24h.toFixed(2)} %
             </div>
-            <div className="icon-chip chip-red">
-              <TrendingDownIcon />
-            </div>
+            <TrendingDownRoundedIcon className="trending-icon red" />
           </div>
         )}
-        <div className="info-container">
-          <h3
-            className="coin-price coin-price-mobile"
-            style={{
-              color:
-                coin.price_change_percentage_24h > 0
-                  ? "var(--green)"
-                  : "var(--red)",
-            }}
-          >
-            ${coin.current_price.toLocaleString()}
-          </h3>
-        </div>
-        <p className="total_volume">
-          Total Volume : ${coin.total_volume.toLocaleString()}
+        <p
+          className={`coin-price ${
+            coin.price_change_percentage_24h < 0 && "coin-price-red"
+          }`}
+        >
+          ${coin.current_price.toLocaleString()}
         </p>
-        <p className="total_volume">
-          Market Cap : ${coin.market_cap.toLocaleString()}
+        <p className="coin-name-2">
+          Total Volume:
+          <span className="coin-total_volume">
+            {" "}
+            {coin.total_volume.toLocaleString()}
+          </span>
+        </p>
+        <p className="coin-name-2">
+          Market Cap:
+          <span className="coin-total_volume">
+            {" "}
+            ${coin.market_cap.toLocaleString()}
+          </span>
         </p>
       </div>
-    </Link>
-    
-    
+    </a>
   );
-};
+}
 
 export default GridComponent;

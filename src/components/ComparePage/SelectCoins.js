@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import { get100Coins } from "../../functions/get100Coins";
 import { MenuItem, Select } from "@mui/material";
+// import SelectDays from "../Coin/SelectDays/SelectDays";
 import "./style.css";
 
 function SelectCoins({ crypto1, crypto2, handleCoinChange }) {

@@ -27,9 +27,9 @@ img {
   }
 
 .coins-days-flex{
-    width: 50%;
+    /* width: 50%; */
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 1.5rem;
   } 
@@ -37,3 +37,16 @@ img {
   .watchlist{
   min-height: 100vh;
   }
+
+
+  @media only screen and (max-width:600px){
+    .coins-days-flex{
+   flex-direction: column  !important;
+    }
+}
+@media only screen and (max-width:450px){
+  .coins-days-flex{
+ flex-direction: column  !important;
+ gap:1rem !important
+  }
+}

@@ -1,12 +1,26 @@
 .coins-flex{
-     display: flex;
+    display: flex;
     justify-content: flex-start ;
     align-items: center;
     gap: 1rem;
     margin :1.5rem ;
 } 
+
+@media only screen and (max-width:600px){
+    .coins-flex{
+   flex-direction: column  !important;
+      gap: 0px !important;
+    }
+}
+@media only screen and (max-width:500px){
+    .coins-flex{
+   flex-direction: column  !important;
+      gap: 0px !important;
+    }
+}
 @media only screen and (max-width:450px){
-    .coin-flex{
-    gap: .5rem;
+    .coins-flex{
+   flex-direction: column  !important;
+      gap: 0px !important;
     }
 }

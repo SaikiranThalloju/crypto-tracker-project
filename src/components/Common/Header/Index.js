@@ -5,7 +5,7 @@ import Button from '../Button'
 import { Link } from 'react-router-dom'
 import CustomizedSwitches from '../ThemeButton'
 import { ThemeProvider } from '../../ThemeContext'
-import Footer from '../Footer/Index'
+
  
 const Index = () => {
   return (

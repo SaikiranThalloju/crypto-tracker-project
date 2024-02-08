@@ -4,6 +4,9 @@ import Index from "../components/Common/Header/Index";
 import Loader from "../components/Common/Loader/Loader";
 import { get100Coins } from "../functions/get100Coins";
 import TabsComponent from '../components/Dashboard/Tabs/tabsComponent'
+import DashboardPage from "./DashboardPage";
+import { Link } from "react-router-dom";
+import BackToTop from "../components/Common/BacktoTop/BackToTop";
 
 
 function WatchlistPage() {
@@ -34,13 +37,13 @@ function WatchlistPage() {
           {myWatchlist?.length === 0 || !coins ? (
             <div>
               <Index />
-              <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
+              <h1 style={{ textAlign: "center", marginBottom: "2rem", color : "var(--black)" }}>
                 No Items in the Watchlist
               </h1>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <a href="/dashboard">
+                <Link to = "/dashboardPage" element = {<DashboardPage/>}>
                   <Button text={"Dashboard"} />
-                </a>
+                </Link>
               </div>
             </div>
           ) : (
@@ -49,6 +52,7 @@ function WatchlistPage() {
               <TabsComponent coins={myWatchlist} isWatchlistPage={true} />
             </div>
           )}
+          <BackToTop/>
         </div>
       )}
     </div>

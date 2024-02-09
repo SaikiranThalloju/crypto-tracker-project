@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./styles.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUp";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDown";
-// import { Link } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import { removeFromWatchlist } from "../../../functions/removeFromWatchList";
 import { addToWatchlist } from "../../../functions/addToWatchList";

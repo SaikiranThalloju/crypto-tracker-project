@@ -55,27 +55,34 @@ function MainComponent() {
             transition={{duration:0.5,delay : 1.5}}>
             <Link to = '/dashboardPage'><Button text={"Dashboard"}/></Link>
             <div>
-            <RWebShare
-            data={{
-              text: "Crypto Dashboard made using React JS.",
-              url: "https://crypto-tracker-project-tawny.vercel.app/",
-              title: "CryptoDashboard.",
-            }}
-            onClick={()=>console.log("shared successfully")}
-          >
-            <Button text="Share App" outlined={true} />
-          </RWebShare>
 
-             {/* <RWebShare 
+
+            {/* <RWebShare
             data={{
               text: "Crypto Dashboard made using React JS.",
               url: "https://crypto-tracker-project-tawny.vercel.app/",
               title: "CryptoDashboard.",
             }}
-            onClick={()=>console.log("shared successfully")}
+            // onClick={()=>console.log("shared successfully")}
           >
             <Button text="Share App" outlined={true} />
           </RWebShare> */}
+    
+
+
+          <RWebShare
+            data={{
+              text: "Crypto Tracker",
+              url: "https://crypto-tracker-ashy-ten.vercel.app/",
+              title: "Crypto Tracker",
+            }}
+          >
+            <div>
+              <Button text={"share"} outlined={true} />
+            </div>
+          </RWebShare>
+
+
 
           </div>
         </motion.div>

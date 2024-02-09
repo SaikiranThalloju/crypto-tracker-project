@@ -7,7 +7,7 @@ import List from "../List/List";
 // import { createTheme } from '@mui/material';
 import GridComponent from "../Grid/GridComponent";
 import { ThemeProvider, createTheme } from "@mui/material";
-import "./style.css";
+import "./style.css"; 
 
 export default function TabsComponent({ coins, isWatchlistPage }) {
   const [value, setValue] = useState("grid");
@@ -28,9 +28,10 @@ export default function TabsComponent({ coins, isWatchlistPage }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#3a80e9",
+        main: "#3a80e9",  
       },
     },
+    // 
   });
 
   return (

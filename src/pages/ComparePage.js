@@ -11,7 +11,7 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/LineChart/LineChart";
 import PriceType from "../components/Coin/PriceType/pricetype";
-import Footer from "../components/Common/Footer/Index";
+
 import BackToTop from "../components/Common/BacktoTop/BackToTop"
 
 
@@ -29,7 +29,7 @@ function ComparePage() {
     setLoading(true);
     setDays(event.target.value);
     const prices1 = await getCoinPrices(crypto1, event.target.value, priceType);
-      const prices2 = await getCoinPrices(crypto2, event.target.value, priceType);
+    const prices2 = await getCoinPrices(crypto2, event.target.value, priceType);
       settingChartData(setChartData,prices1,prices2)
       setLoading(false);
   }
@@ -72,17 +72,15 @@ function ComparePage() {
 }
     }
   
-
-
-
   const handleCoinChange = async (event, isCoin2) => {
     setLoading(true);
     if (isCoin2) {
       setCrypto2(event.target.value);
       const data = await GetCoinData(event.target.value);
       coinObject(setCrypto2Data, data);
+      //getting prices of the both cryptos
       const prices1 = await getCoinPrices(crypto1, days, priceType);
-    const prices2 = await getCoinPrices(crypto2, days, priceType);
+      const prices2 = await getCoinPrices(crypto2, days, priceType);
     if (prices1.length > 0 && prices2.length > 0) {
       // settingChartData(setChartData,prices)
       console.log("Both PricesFetched", prices1, prices2);
@@ -106,7 +104,6 @@ function ComparePage() {
       ) : (
         <>
           <div className="coins-days-flex">
-            
             <SelectCoins
               crypto1={crypto1}
               crypto2={crypto2}
@@ -139,7 +136,7 @@ function ComparePage() {
       )}
       ;
       <BackToTop/>
-      <Footer/>
+      
     </div>
   );
 }

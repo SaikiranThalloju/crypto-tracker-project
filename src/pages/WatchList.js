@@ -19,6 +19,8 @@ function WatchlistPage() {
   }, []);
 
   console.log(myWatchlist)
+
+  
   const getData = async () => {
     setLoading(true);
     const allCoins = await get100Coins();
@@ -28,6 +30,8 @@ function WatchlistPage() {
     }
     setLoading(false);
   };
+
+
   return (
     <div>
       {loading || !coins ? (

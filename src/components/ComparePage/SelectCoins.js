@@ -50,6 +50,8 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
           </MenuItem>
         ))}
       </Select>
+
+      
       <p style={{color:"var(--black)"}}>Crypto 2</p>
       <Select
         sx={styles}

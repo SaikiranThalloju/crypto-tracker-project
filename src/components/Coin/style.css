@@ -2,8 +2,12 @@
     cursor: pointer;
 }
 
-.coin-info-desc a{
-    /* text-decoration: underline; */
+.coin-info-heading{
+    color : var(--black)
+}
+.coin-info-desc a {
+    color: var(--black);
+    text-decoration: underline;
 }
 .coin-info-desc a:hover{
     color: var(--blue)!important;

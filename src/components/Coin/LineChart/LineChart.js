@@ -33,11 +33,11 @@ function LineChart({ chartData, priceType, multiAxis }) {
           },
           crypto2: {
             type: "linear",
-            display: true,
+            display: false,
             position: "right",
             ticks: {
               callback: function (value, index, ticks) {
-                if (priceType === "prices") return "$" + value.toLocaleString();
+                if (priceType === "prices")return "$"+ value.toLocaleString()
                 else {
                   return "$" + ConvertNumbers(value);
                 }
@@ -48,7 +48,7 @@ function LineChart({ chartData, priceType, multiAxis }) {
       : {
           cryptoSingle: {
             type: "linear",
-            display: true,
+            display: false,
             position: "left",
             ticks: {
               // display:false,

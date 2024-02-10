@@ -31,7 +31,6 @@ export const settingChartData = (setChartData,prices1,prices2)=>{
     });
   }else{
     setChartData({
-      
       labels: prices1.map((price) => convertDate(price[0])),
       datasets: [
         {

@@ -9,7 +9,6 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import { GetCoinData } from "../functions/GetCoinData";
 import { getCoinPrices } from "../functions/GetCoinPrices";
 import LineChart from "../components/Coin/LineChart/LineChart";
-// import { convertDate } from "../functions/ConvertDate";
 import SelectDays from "../components/Coin/SelectDays/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import PriceType from "../components/Coin/PriceType/pricetype";
@@ -43,7 +42,7 @@ const CoinPage = () => {
   const handleDaysChange = async (event) => {
     setLoading(true);
     setDays(event.target.value);
-    const prices = await getCoinPrices(id, event.target.value,priceType);
+    const prices = await getCoinPrices(id, days,priceType);
     if (prices.length > 0) {
       settingChartData(setChartData, prices);
       setLoading(false);

@@ -53,7 +53,7 @@ export default function TabsComponent({ coins, isWatchlistPage }) {
                 />
               ))
             ) : (
-              <div>No Currencies Found</div>
+              <div style={{color : "var(--black)"}}>No Currencies Found</div>
             )}
           </div>
         </TabPanel>
@@ -66,7 +66,12 @@ export default function TabsComponent({ coins, isWatchlistPage }) {
               ))}
             </table>
           ) : (
-            <div className="no-currency">No Currencies Found</div>
+            <div style={{color : "var(--black",
+            display : "flex",
+            justifyContent : "center",
+            alignItems : "center",
+            marginTop : "1.5rem"
+          }}>No Currencies Found</div>
           )}
         </TabPanel>
       </TabContext>
